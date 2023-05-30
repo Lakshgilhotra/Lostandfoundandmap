@@ -13,7 +13,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button create,show;
+    Button create,show,map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         create=findViewById(R.id.Create_New_Advert);
         show=findViewById(R.id.Show_all_l_f);
+        map=findViewById(R.id.showmap);
 
         create.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +38,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent sentTOShow=new Intent(MainActivity.this,Showlostandfound.class);
                 startActivity(sentTOShow);
+            }
+        });
+
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sentTOmap=new Intent(MainActivity.this, ShowMap.class);
+                startActivity(sentTOmap);
             }
         });
 
